@@ -1,0 +1,18 @@
+# Lean 4 / Lake
+.lake/
+build/
+lake-packages/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
