@@ -6,9 +6,6 @@ package «RelationalJerkDynamics» where
     ⟨`autoImplicit, false⟩
   ]
 
-require mathlib from git
-  "https://github.com" @ "v4.12.0"
-
 @[default_target]
 lean_lib «RJD» where
   globs := #[.submodules `RJD]
