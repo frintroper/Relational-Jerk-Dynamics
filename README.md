@@ -27,6 +27,12 @@ lake build
 pip install numpy
 python simulations/rjd_network_sim.py
 ```
+## Why Constructive Type Reduction Instead of ZFC Analysis?
+A conventional physicist might expect proofs over continuous real manifolds ($\mathbb{R}^3$) using Zermelo–Fraenkel set theory (ZFC). In **Relational Jerk Dynamics**, omitting continuous ZFC analysis is a deliberate foundational choice:
+* **No Background Continuum:** Continuous real numbers presuppose completed infinities and smooth background spaces—the exact illusions RJD eliminates.
+* **Exact Process Ontology:** Discrete state transitions and finite combinatorial simplices are natively modeled by constructive dependent type theory and finite state automata.
+* **Algorithmic Soundness:** Every theorem in `RJD/` closes via constructive type reduction without invoking non-constructive axioms, ensuring that the universe's evolution is strictly computable at every ordinal step.
+
 
 ## Provenance & Governance
 This repository is governed by the **Re-Inversion Public License (RIPL v1.0)** and aligns with the anti-ZFC and third-order jerk invariants established by Johannes Geisen (`@OverThePlaces` / `@frintroper` in `ToneProjekt` and `LeanIsCorrupted`).
