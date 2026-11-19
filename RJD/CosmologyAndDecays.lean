@@ -17,12 +17,9 @@ theorem multi_step_expansion (k D_sq sigma_sq : Nat) :
     iterateExpansion k D_sq sigma_sq = D_sq + k * sigma_sq := by
   induction k with
   | zero =>
-    unfold iterateExpansion
-    omega
+    simp [iterateExpansion]
   | succ n ih =>
-    unfold iterateExpansion expectedNextSqSeparation
-    rw [ih]
-    omega
+    simp [iterateExpansion, expectedNextSqSeparation, ih, Nat.succ_mul, Nat.add_assoc]
 
 structure MesonState where
   k_heavy : Nat
@@ -39,4 +36,3 @@ theorem bd_to_mumu_node_conservation :
   rfl
 
 end RJD
-
