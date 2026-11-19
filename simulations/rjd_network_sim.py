@@ -53,11 +53,13 @@ def simulate_coordinate_free_graph(N: int = 32, steps: int = 1500, eta: float = 
 
 if __name__ == "__main__":
     print("=== 1. OBSERVER INTERFACE SCALING VERIFICATION (d=3) ===")
-    for n in:
+    node_counts = (2, 3, 4, 16, 64, 256)
+    for n in node_counts:
         mJ, sJ, mR, j_n, j_r = simulate_observer_projection(n)
         print(f"N={n:3d} | <J>={mJ:8.4f} | sigma_J={sJ:6.4f} | <J>/N={j_n:6.4f} | <J>/R={j_r:6.4f}")
 
     print("\n=== 2. COORDINATE-FREE GRAPH LAPLACIAN SPECTRUM ===")
     eigs = simulate_coordinate_free_graph(N=32)
-    print(f"Spectral Gap (lambda_2): {eigs[1]:.4f} | Max Eigenvalue (lambda_N): {eigs[-1]:.4f}")
-
+    lambda_2 = float(eigs[1])
+    lambda_max = float(eigs[-1])
+    print(f"Spectral Gap (lambda_2): {lambda_2:.4f} | Max Eigenvalue (lambda_N): {lambda_max:.4f}")
