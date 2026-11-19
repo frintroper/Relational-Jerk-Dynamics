@@ -1,8 +1,8 @@
 namespace RJD
 
 def impulse (a_i a_k : Int) : Int :=
-  if a_k > a i then (1 : Int)
-  else if a_k < a i then (-1 : Int)
+  if a_k > a_i then (1 : Int)
+  else if a_k < a_i then (-1 : Int)
   else (0 : Int)
 
 def totalJerk (a_i : Int) : List Int -> Int
@@ -38,7 +38,7 @@ theorem ostrogradski_jerk_bound (a_i : Int) (net : List Int) :
   | nil =>
     simp [totalJerk]
   | cons x xs ih =>
-    simp only [totalJerk, List.length_cons, Nat.cast_add, Nat.cast_one]
+    simp only [totalJerk, List.length_cons, Int.ofNat_add, Int.ofNat_succ, Int.ofNat_zero]
     have hb := impulse_bounds a_i x
     omega
 
@@ -99,4 +99,3 @@ theorem extremal_node_nonzero_jerk (a_max : Int) (net : List Int)
       omega
 
 end RJD
-
