@@ -16,14 +16,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install elan and Lean 4
-        run: |
-          curl https://githubusercontent.com -sSf | sh -s -- -y
-          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+        run: curl https://githubusercontent.com -sSf | sh -s -- -y
 
       - name: Generate manifest and build Lean 4 proofs
         run: |
-          lake update
-          lake build
+          ~/.elan/bin/lake update
+          ~/.elan/bin/lake build
 
   verify-python:
     name: Run Numerical Simulations
