@@ -7,5 +7,4 @@ package «RelationalJerkDynamics» where
   ]
 
 @[default_target]
-lean_lib «RJD» where
-  globs := #[.submodules `RJD]
+lean_lib «RJD»
