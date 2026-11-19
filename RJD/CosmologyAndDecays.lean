@@ -1,31 +1,28 @@
-import Mathlib.Data.Real.Basic
-
 namespace RJD
 
-def expectedNextSqSeparation (D_sq sigma_sq : Real) : Real :=
+def expectedNextSqSeparation (D_sq sigma_sq : Nat) : Nat :=
   D_sq + sigma_sq
 
-theorem cosmological_overshoot_expansion (D_sq sigma_sq : Real)
+theorem cosmological_overshoot_expansion (D_sq sigma_sq : Nat)
     (h_var : sigma_sq > 0) :
     expectedNextSqSeparation D_sq sigma_sq > D_sq := by
   unfold expectedNextSqSeparation
-  linarith
+  omega
 
-def iterateExpansion : Nat -> Real -> Real -> Real
+def iterateExpansion : Nat -> Nat -> Nat -> Nat
   | 0, D_sq, _ => D_sq
   | k + 1, D_sq, sigma_sq => expectedNextSqSeparation (iterateExpansion k D_sq sigma_sq) sigma_sq
 
-theorem multi_step_expansion (k : Nat) (D_sq sigma_sq : Real) :
-    iterateExpansion k D_sq sigma_sq = D_sq + (k : Real) * sigma_sq := by
+theorem multi_step_expansion (k D_sq sigma_sq : Nat) :
+    iterateExpansion k D_sq sigma_sq = D_sq + k * sigma_sq := by
   induction k with
   | zero =>
     unfold iterateExpansion
-    ring
+    omega
   | succ n ih =>
     unfold iterateExpansion expectedNextSqSeparation
     rw [ih]
-    push_cast
-    ring
+    omega
 
 structure MesonState where
   k_heavy : Nat
@@ -42,3 +39,4 @@ theorem bd_to_mumu_node_conservation :
   rfl
 
 end RJD
+
