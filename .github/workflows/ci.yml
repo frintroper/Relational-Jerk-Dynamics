@@ -17,8 +17,6 @@ jobs:
 
       - name: Build and verify Lean 4 modules
         uses: leanprover/lean-action@v1
-        with:
-          lake-update: true
 
   verify-python:
     name: Run Numerical Simulations
