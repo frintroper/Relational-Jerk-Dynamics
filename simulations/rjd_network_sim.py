@@ -59,4 +59,5 @@ if __name__ == "__main__":
 
     print("\n=== 2. COORDINATE-FREE GRAPH LAPLACIAN SPECTRUM ===")
     eigs = simulate_coordinate_free_graph(N=32)
-    print(f"Spectral Gap (lambda_2): {eigs:.4f} | Max Eigenvalue (lambda_N): {eigs[-1]:.4f}")
+    print(f"Spectral Gap (lambda_2): {eigs[1]:.4f} | Max Eigenvalue (lambda_N): {eigs[-1]:.4f}")
+
