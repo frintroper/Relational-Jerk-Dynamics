@@ -3,11 +3,12 @@ namespace RJD
 def State (N : Nat) := Fin N -> Int
 
 def unitImpulse {N : Nat} (a : State N) (i k : Fin N) : Int :=
-  if a k > a i then (1 : Int)
-  else if a k < a i then (-1 : Int)
-  else (0 : Int)
+  if a k > a i then
+    (1 : Int)
+  else
+    if a k < a i then (-1 : Int) else (0 : Int)
 
-lemma unitImpulse_antisymm {N : Nat} (a : State N) (i k : Fin N) :
+theorem unitImpulse_antisymm {N : Nat} (a : State N) (i k : Fin N) :
     unitImpulse a i k = - unitImpulse a k i := by
   unfold unitImpulse
   by_cases h1 : a k > a i
