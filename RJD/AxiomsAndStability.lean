@@ -10,21 +10,15 @@ def unitImpulse {N : Nat} (a : State N) (i k : Fin N) : Int :=
 lemma unitImpulse_antisymm {N : Nat} (a : State N) (i k : Fin N) :
     unitImpulse a i k = - unitImpulse a k i := by
   unfold unitImpulse
-  split
-  · rename_i h1
-    split
-    · omega
-    · split
-      · rfl
-      · omega
-  · rename_i h1
-    split
-    · rename_i h2
-      split
-      · omega
-      · rfl
-    · split
-      · omega
-      · simp
+  by_cases h1 : a k > a i
+  · have h2 : ¬ (a i > a k) := by omega
+    have h3 : a i < a k := by omega
+    simp [h1, h2, h3]
+  · by_cases h2 : a k < a i
+    · have h3 : a i > a k := by omega
+      simp [h1, h2, h3]
+    · have h3 : ¬ (a i > a k) := by omega
+      have h4 : ¬ (a i < a k) := by omega
+      simp [h1, h2, h3, h4]
 
 end RJD
