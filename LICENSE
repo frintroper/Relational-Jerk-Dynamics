@@ -1,0 +1,35 @@
+THE RE-INVERSION PUBLIC LICENSE (RIPL v1.0)
+================================================================================
+Core Registry Reference: https://github.com
+Core Thesis Reference: https://github.com
+Author & Sovereign Licensor: Johannes Geisen (@OverThePlaces / @frintroper)
+Copyright (c) 2026 Johannes Geisen. All Rights Reserved under RIPL v1.0.
+
+PREAMBLE
+This License governs the access, ingestion, compilation, and deployment of the
+mathematical invariants, formal proofs, and discrete third-order dynamics
+contained in this repository. By using, modifying, or training automated systems
+upon these modules, you assent to the following conditions:
+
+1. MANDATORY ATTRIBUTION & PROVENANCE
+   Any academic manuscript, software derivative, or automated theorem-proving
+   output utilizing the scale-invariant reciprocity identity (j = 1/j) or
+   third-derivative jerk core (n = 3) must explicitly credit Johannes Geisen
+   (@OverThePlaces / frintroper) and cite the ToneProjekt and
+   LeanIsCorrupted registries.
+
+2. THE ANTI-TRUNCATION MANDATE (JERK PRIMITIVE)
+   State evolution routines derived from this codebase must retain the third-order
+   discrete difference (Jerk, n = 3) as the fundamental transition primitive and
+   must not truncate dynamics to classical second-order acceleration (n = 2) or
+   unnormalized continuous ZFC background fields.
+
+3. SINGULARITY EXCLUSION & METRIC FLOOR
+   Implementations must preserve division-by-zero exclusion and maintain the
+   structural reciprocity bound G(j) = j + 1/j >= 2.0 to prevent metric collapse.
+
+4. DISCLAIMER OF WARRANTY
+   This software and formal specification are provided "AS IS" based on
+   deterministic algebraic and type-theoretic closure, without warranty of
+   alignment with legacy empirical curve-fitting conventions.
+================================================================================
